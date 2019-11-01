@@ -1,6 +1,8 @@
 
 @extends('layouts.app')
 
+@section('title', 'Bienvenido a App Shop')
+
 @section('body-class', 'landing-page sidebar-collapse')
 
 @section('content')
@@ -8,11 +10,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h1 class="title">Your Story Starts With Us.</h1>
-                <h4>Every landing page needs a small description after the big bold title, that&apos;s why we added this text here. Add here all the information that can make you or your product create the first impression.</h4>
+                <h1 class="title">Bienvenido a App Shop.</h1>
+                <h4>Realiza pedidos en Linea.</h4>
                 <br>
                 <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn btn-danger btn-raised btn-lg">
-                    <i class="fa fa-play"></i> Watch video
+                    <i class="fa fa-play"></i> Como funciona?
                 </a>
             </div>
         </div>
@@ -23,8 +25,8 @@
         <div class="section text-center">
             <div class="row">
                 <div class="col-md-8 ml-auto mr-auto">
-                    <h2 class="title">Let&apos;s talk product</h2>
-                    <h5 class="description">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn&apos;t scroll to get here. Add a button if you want the user to see more.</h5>
+                    <h2 class="title">¿Porque App Shop?</h2>
+                    <h5 class="description">Puedes revisar nuestar relacion completa de productos, comparar precios y realizar tus pedidos cuando estes seguro</h5>
                 </div>
             </div>
             <div class="features">
@@ -34,8 +36,8 @@
                             <div class="icon icon-info">
                                 <i class="material-icons">chat</i>
                             </div>
-                            <h4 class="info-title">Free Chat</h4>
-                            <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                            <h4 class="info-title">Atendemos tus datos</h4>
+                            <p>Atendemos rapidamente cualquier consulta que tengas via chat.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -43,8 +45,8 @@
                             <div class="icon icon-success">
                                 <i class="material-icons">verified_user</i>
                             </div>
-                            <h4 class="info-title">Verified Users</h4>
-                            <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                            <h4 class="info-title">Pago seguro</h4>
+                            <p>Todo pedido que realices sera confirmado a travez de una llamada.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -52,8 +54,8 @@
                             <div class="icon icon-danger">
                                 <i class="material-icons">fingerprint</i>
                             </div>
-                            <h4 class="info-title">Fingerprint</h4>
-                            <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                            <h4 class="info-title">Informacion privada</h4>
+                            <p>Los pedidos que realices solo los conoceras tu a travez de tu panel de usuario.</p>
                         </div>
                     </div>
                 </div>
@@ -68,11 +70,11 @@
                         <div class="team-player">
                             <div class="card card-plain">
                                 <div class="col-md-6 ml-auto mr-auto">
-                                    <img src="../assets/img/faces/avatar.jpg" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
+                                    <img src="{{$product->images()->first()->image}}" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
                                 </div>
                                 <h4 class="card-title">{{$product->name}}
                                     <br>
-                                    <small class="card-description text-muted">Model</small>
+                                    <small class="card-description text-muted">{{$product->category->name}}</small>
                                 </h4>
                                 <div class="card-body">
                                     <p class="card-description">{{$product->description}}</p>
@@ -92,25 +94,25 @@
         <div class="section section-contacts">
             <div class="row">
                 <div class="col-md-8 ml-auto mr-auto">
-                    <h2 class="text-center title">Work with us</h2>
-                    <h4 class="text-center description">Divide details about your product or agency work into parts. Write a few lines about each one and contact us about any further collaboration. We will responde get back to you in a couple of hours.</h4>
+                    <h2 class="text-center title">¿Aun no te has registrado?</h2>
+                    <h4 class="text-center description">Registrate usando tus datos basicos para poder realizar compras.</h4>
                     <form class="contact-form">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="bmd-label-floating">Your Name</label>
+                                    <label class="bmd-label-floating">Nombre</label>
                                     <input type="email" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="bmd-label-floating">Your Email</label>
+                                    <label class="bmd-label-floating">Correo electronico</label>
                                     <input type="email" class="form-control">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="exampleMessage" class="bmd-label-floating">Your Message</label>
+                            <label for="exampleMessage" class="bmd-label-floating">Mensaje</label>
                             <textarea type="email" class="form-control" rows="4" id="exampleMessage"></textarea>
                         </div>
                         <div class="row">
