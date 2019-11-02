@@ -14,6 +14,7 @@
 
         <div class="section text-center">
             <h2 class="title">Listado de Productos</h2>
+            <a href="{{url('/admin/products/create')}}" class="btn btn-primary">Nuevo producto</a>
             <div class="team">
                 <div class="row">
                     <table class="table table-striped">
@@ -33,26 +34,26 @@
                             <td>{{ $product->id }}</td>
                             <td>{{ $product->name }}</td>
                             <td>{{ $product->description }}</td>
-                            <td>{{ $product->category->name }}</td>
-                            <td>{{ $product->price }}</td>
+                            <td>{{ $product->category ? $product->category->name : 'General' }}</td>
+                            <td>&euro;{{ $product->price }}</td>
                             <td class="td-actions">
                                 <button type="button" rel="tooltip" class="btn btn-info btn-simple btn-xs">
                                     <i class="material-icons">person</i>
                                 </button>
-                                <button type="button" rel="tooltip" class="btn btn-success btn-simple btn-xs">
+                                <a href="{{url('/admin/products/'.$product->id.'/edit')}}" title="Editar el Producto" type="button" rel="tooltip" class="btn btn-success btn-simple btn-xs">
                                     <i class="material-icons">edit</i>
-                                </button>
-                                <button type="button" rel="tooltip" class="btn btn-danger btn-simple btn-xs">
+                                </a>
+                                <a href="{{url('/admin/products/'.$product->id.'/delete)}}" title="Eliminar" type="button" rel="tooltip" class="btn btn-danger btn-simple btn-xs">
                                     <i class="material-icons">close</i>
-                                </button>
+                                </a>
                             </td>
                         </tr>
                         @endforeach
                         </tbody>
                     </table>
-                    {{ $products->links() }}
                 </div>
             </div>
+            {{ $products->links() }}
         </div>
 
     </div>
