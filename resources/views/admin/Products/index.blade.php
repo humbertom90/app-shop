@@ -37,15 +37,19 @@
                             <td>{{ $product->category ? $product->category->name : 'General' }}</td>
                             <td>&euro;{{ $product->price }}</td>
                             <td class="td-actions">
-                                <button type="button" rel="tooltip" class="btn btn-info btn-simple btn-xs">
-                                    <i class="material-icons">person</i>
-                                </button>
-                                <a href="{{url('/admin/products/'.$product->id.'/edit')}}" title="Editar el Producto" type="button" rel="tooltip" class="btn btn-success btn-simple btn-xs">
-                                    <i class="material-icons">edit</i>
-                                </a>
-                                <a href="{{url('/admin/products/'.$product->id.'/delete)}}" title="Eliminar" type="button" rel="tooltip" class="btn btn-danger btn-simple btn-xs">
-                                    <i class="material-icons">close</i>
-                                </a>
+                                <form method="post" action="{{url('/admin/products/'.$product->id)}}">
+                                    {{csrf_field()}}
+                                    {{method_field('DELETE')}}
+                                    <a type="button" rel="tooltip" class="btn btn-info btn-simple btn-xs">
+                                        <i class="material-icons">info</i>
+                                    </a>
+                                    <a href="{{url('/admin/products/'.$product->id.'/edit')}}" title="Editar el Producto" type="button" rel="tooltip" class="btn btn-success btn-simple btn-xs">
+                                        <i class="material-icons">edit</i>
+                                    </a>
+                                    <button title="Eliminar" type="submit" rel="tooltip" class="btn btn-danger btn-simple btn-xs">
+                                        <i class="material-icons">close</i>
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                         @endforeach
