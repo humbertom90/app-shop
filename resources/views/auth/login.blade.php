@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-lg-4 col-md-6 ml-auto mr-auto">
             <div class="card card-login">
-                <form class="form" method="POST" action="{{url('/admin/products/')}}">
+                <form class="form" method="POST" action="{{ route('login') }}">
                     {{csrf_field()}}
                     <div class="card-header card-header-primary text-center">
                         <h4 class="card-title">Inicio de sesion</h4>
