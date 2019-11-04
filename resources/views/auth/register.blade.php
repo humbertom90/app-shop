@@ -8,6 +8,15 @@
         <div class="row">
             <div class="col-lg-4 col-md-6 ml-auto mr-auto">
                 <div class="card card-login">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                <li>{‌{ $error->all() }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <form class="form" method="POST" action="{{ route('register') }}">
                         {{csrf_field()}}
                         <div class="card-header card-header-primary text-center">
