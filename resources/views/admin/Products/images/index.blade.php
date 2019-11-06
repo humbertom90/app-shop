@@ -39,7 +39,21 @@
 
                             <div class="card-body">Panel Content
                                 <img src="{{ $image->Url }}" width="300">
-                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                                <form method="post" action="{{url('admin/products/'.$image->id.'/images')}}">
+                                    {{csrf_field()}}
+                                    {{method_field('delete')}}
+                                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                                    @if($image->featured)
+                                        <button type="button" class="btn btn-info btn-fab btn-fab-mini btn-round" rel="tooltip" title="Imagen Destacada">
+                                            <i class="material-icons">favorite</i>
+                                        </button>
+                                    @else
+                                        <a href="{{url('admin/products/'.$product->id.'/images/select/'.$image->id)}}" class="btn btn-primary btn-fab btn-fab-mini btn-round">
+                                            <i class="material-icons">favorite</i>
+                                        </a>
+                                    @endif
+                                </form>
+
 
                             </div>
 
