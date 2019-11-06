@@ -20,12 +20,12 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th style="width: 10%">#</th>
-                            <th style="width: 20%">Nombre</th>
+                            <th style="width: 5%">#</th>
+                            <th style="width: 15%">Nombre</th>
                             <th style="width: 20%">Descripcion</th>
                             <th style="width: 10%">Categoria</th>
                             <th style="width: 10%">Precio</th>
-                            <th style="width: 30%">Opciones</th>
+                            <th style="width: 40%">Opciones</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -45,6 +45,9 @@
                                     </a>
                                     <a href="{{url('/admin/products/'.$product->id.'/edit')}}" title="Editar el Producto" type="button" rel="tooltip" class="btn btn-success btn-simple btn-xs">
                                         <i class="material-icons">edit</i>
+                                    </a>
+                                    <a href="{{url('/admin/products/'.$product->id.'/images')}}" title="Imagenes del Producto" type="button" rel="tooltip" class="btn btn-warning btn-simple btn-xs">
+                                        <i class="material-icons">image</i>
                                     </a>
                                     <button title="Eliminar" type="submit" rel="tooltip" class="btn btn-danger btn-simple btn-xs">
                                         <i class="material-icons">close</i>
