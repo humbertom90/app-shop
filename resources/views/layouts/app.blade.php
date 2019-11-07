@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- CSS Files -->
     <link href="{{ asset('css/material-kit.css') }}" rel="stylesheet" />
+    @yield('styles')
 
 </head>
 
