@@ -23,7 +23,7 @@
                         <!--
                             color-classes: "nav-pills-primary", "nav-pills-info", "nav-pills-success", "nav-pills-warning","nav-pills-danger"
                         -->
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <a class="nav-link" href="#dashboard-1" role="tab" data-toggle="tab">
                                 <i class="material-icons">dashboard</i>
                                 Carrito de compras
@@ -36,6 +36,15 @@
                             </a>
                         </li>
                     </ul>
+
+                    @foreach(auth()->user()->cart->details as $detail)
+                    <ul>
+                        <li>{{$detail}}</li>
+                    </ul>
+                    @endforeach
+
+
+
                 </div>
             </div>
         </div>

@@ -67,7 +67,9 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="post" action="">
+            <form method="post" action="{{url('/cart')}}">
+                {{csrf_field()}}
+                <input type="hidden" name="product_id" value="{{$product->id}}">
                 <div class="modal-body">
                     <input type="number" value="1" name="quantity" class="form-control">
                 </div>
