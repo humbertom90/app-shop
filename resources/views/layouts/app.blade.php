@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- CSS Files -->
     <link href="{{ asset('css/material-kit.css') }}" rel="stylesheet" />
+    @yield('styles')
 
 </head>
 
@@ -64,6 +65,12 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                                <a class="dropdown-item" href="{{url('/home')}}">
+                                    Dashboard
+                                </a>
+
+
                             @if(auth()->user()->admin)
 
                                 <a class="dropdown-item" href="{{url('/admin/products')}}">
