@@ -73,6 +73,10 @@
 
                             @if(auth()->user()->admin)
 
+                                <a class="dropdown-item" href="{{url('/admin/categories')}}">
+                                    Gestionar Categorias
+                                </a>
+
                                 <a class="dropdown-item" href="{{url('/admin/products')}}">
                                     Gestionar Productos
                                 </a>
@@ -82,7 +86,7 @@
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+                                    Cerrar sesion
                                 </a>
 
 
