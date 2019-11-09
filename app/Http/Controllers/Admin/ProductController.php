@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Category;
 use App\ProductImage;
 use Illuminate\Http\Request;
 use App\Product;
@@ -15,7 +16,8 @@ class ProductController extends Controller
     }
 
     public function create(){
-        return view('admin.Products.create');
+        $categories = Category::orderBy('name')->get();
+        return view('admin.Products.create')->with(compact('categories'));
     }
 
     public function store(Request $request){
@@ -44,6 +46,7 @@ class ProductController extends Controller
         $product->description = $request->input('description');
         $product->price = $request->input('price');
         $product->long_description = $request->input('long_description');
+        $product->category_id = $request->category_id;
         $product->save();
 
         return redirect('/admin/products');
@@ -52,8 +55,9 @@ class ProductController extends Controller
 
     public function edit($id){
 
+        $categories = Category::orderBy('name')->get();
         $product = Product::find($id);
-        return view('admin.Products.edit')->with(compact('product'));
+        return view('admin.Products.edit')->with(compact('product', 'categories'));
     }
 
     public function update(Request $request, $id){
@@ -83,6 +87,7 @@ class ProductController extends Controller
         $product->description = $request->input('description');
         $product->price = $request->input('price');
         $product->long_description = $request->input('long_description');
+        $product->category_id = $request->category_id;
         $product->save();
 
         return redirect('/admin/products');

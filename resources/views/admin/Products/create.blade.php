@@ -35,6 +35,15 @@
                     <input type="text" class="form-control" name="description" placeholder="Descripcion" value="{{old('description')}}">
                 </div>
                 <div class="form-group">
+                    <label for="inputPassword4">Categoria del producto</label>
+                    <select class="form-control" name="category_id">
+                        <option value="7"> General </option>
+                        @foreach ($categories as $category)
+                        <option value="{{$category->id}}">{{$category->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="inputAddress">Precio del producto</label>
                     <input type="number" class="form-control" name="price" placeholder="Precio" value="{{old('price')}}">
                 </div>

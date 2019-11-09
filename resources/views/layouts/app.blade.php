@@ -73,6 +73,10 @@
 
                             @if(auth()->user()->admin)
 
+                                <a class="dropdown-item" href="{{url('/admin/categories')}}">
+                                    Gestionar Categorias
+                                </a>
+
                                 <a class="dropdown-item" href="{{url('/admin/products')}}">
                                     Gestionar Productos
                                 </a>
@@ -82,7 +86,7 @@
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+                                    Cerrar sesion
                                 </a>
 
 
@@ -127,6 +131,7 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
 <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
 <script src="{{asset('/js/material-kit.js')}}" type="text/javascript"></script>
+@yield('scripts')
 </body>
 
 </html>
