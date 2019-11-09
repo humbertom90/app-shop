@@ -24,12 +24,17 @@
             @endif
 
 
-            <form method="post" action="{{ url('/admin/categories') }}">
+            <form method="post" action="{{ url('/admin/categories') }}" enctype="multipart/form-data">
                 {{csrf_field()}}
                 <div class="form-group">
                     <label for="inputEmail4">Nombre de la categoria</label>
                     <input type="text" class="form-control" name="name" placeholder="Nombre" value="{{old('name')}}">
                 </div>
+
+
+                <label for="inputEmail4">Imagen de la categoria</label>
+                <input type="file" name="image" placeholder="Nombre">
+
 
                 <textarea type="text" rows="5" class="form-control" name="description" placeholder="Descripcion de la categoria">{{old('long_description')}}</textarea>
 
